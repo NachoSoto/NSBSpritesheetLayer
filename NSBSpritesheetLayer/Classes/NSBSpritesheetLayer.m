@@ -16,6 +16,7 @@
     
     BOOL _goingBack;
     NSUInteger _fps;
+    CGSize _imageSize;
 }
 
 @property (nonatomic, retain) NSBSpritesheet *spritesheet;
@@ -35,13 +36,17 @@
     {
         self.spritesheet = spritesheet;
     
+        CGImageRef image = spritesheet.image.CGImage;
+        
         self.contentsScale = [UIScreen mainScreen].scale;
-        self.contents = (id)spritesheet.image.CGImage;
+        self.contents = (id)image;
         
         self.autoreverses = NO;
         _goingBack = NO;
         _fps = framesPerSecond;
         _frameNumber = 0;
+        _imageSize = CGSizeMake(CGImageGetWidth(image),
+                                CGImageGetHeight(image));
         
         [self renderCurrentFrame];
     }
@@ -205,14 +210,11 @@
 {
     const CGRect frame = self.spritesheet.frames[frameIndex];
     
-    const CGSize imageSize = CGSizeMake(CGImageGetWidth((CGImageRef)self.contents),
-                                        CGImageGetHeight((CGImageRef)self.contents));
-    
-    // contentsRect is relative to image size
-    return CGRectMake(frame.origin.x / imageSize.width,
-                      frame.origin.y / imageSize.height,
-                      frame.size.width / imageSize.width,
-                      frame.size.height / imageSize.height);
+    // contentsRect is relative to the image size
+    return CGRectMake(frame.origin.x / _imageSize.width,
+                      frame.origin.y / _imageSize.height,
+                      frame.size.width / _imageSize.width,
+                      frame.size.height / _imageSize.height);
 }
 
 @end
