@@ -1,0 +1,13 @@
+.DS_Store
+*.mode1v3
+*.pbxuser
+*.perspectivev3
+*.xcuserstate
+*.mergesave
+*.bak
+.~*
+.DS_Store
+xcuserdata
+Thumbs.db
+build
+contents.xcworkspacedata

@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5709A3A815ADC6DA000180AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5709A3A715ADC6DA000180AF /* UIKit.framework */; };
+		5709A3AA15ADC6DA000180AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5709A3A915ADC6DA000180AF /* Foundation.framework */; };
+		5709A3AC15ADC6DA000180AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5709A3AB15ADC6DA000180AF /* CoreGraphics.framework */; };
+		57905E1115B0539B009D3206 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57905E1015B0539B009D3206 /* QuartzCore.framework */; };
+		5796DDCC17B8972100AAD25C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5796DDC917B8972100AAD25C /* Default-568h@2x.png */; };
+		5796DDCD17B8972100AAD25C /* spritesheet.json in Resources */ = {isa = PBXBuildFile; fileRef = 5796DDCA17B8972100AAD25C /* spritesheet.json */; };
+		5796DDCE17B8972100AAD25C /* spritesheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5796DDCB17B8972100AAD25C /* spritesheet@2x.png */; };
+		5796DDD417B8973000AAD25C /* NSBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796DDD317B8973000AAD25C /* NSBAppDelegate.m */; };
+		5796DDDB17B8973F00AAD25C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796DDD717B8973E00AAD25C /* main.m */; };
+		5796DDFF17B899AA00AAD25C /* NSBSpritesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796DDFA17B899AA00AAD25C /* NSBSpritesheet.m */; };
+		5796DE0017B899AA00AAD25C /* NSBSpritesheetLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796DDFC17B899AA00AAD25C /* NSBSpritesheetLayer.m */; };
+		5796DE0117B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796DDFE17B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5709A3A315ADC6DA000180AF /* NSBSpritesheetLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSBSpritesheetLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5709A3A715ADC6DA000180AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5709A3A915ADC6DA000180AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5709A3AB15ADC6DA000180AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5709A3CE15ADD037000180AF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		57905E1015B0539B009D3206 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5796DDC917B8972100AAD25C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "NSBSpritesheetLayer/Demo/Default-568h@2x.png"; sourceTree = "<group>"; };
+		5796DDCA17B8972100AAD25C /* spritesheet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = spritesheet.json; path = NSBSpritesheetLayer/Demo/spritesheet.json; sourceTree = "<group>"; };
+		5796DDCB17B8972100AAD25C /* spritesheet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spritesheet@2x.png"; path = "NSBSpritesheetLayer/Demo/spritesheet@2x.png"; sourceTree = "<group>"; };
+		5796DDD217B8973000AAD25C /* NSBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSBAppDelegate.h; path = NSBSpritesheetLayer/NSBAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5796DDD317B8973000AAD25C /* NSBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSBAppDelegate.m; path = NSBSpritesheetLayer/NSBAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		5796DDD617B8973E00AAD25C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = NSBSpritesheetLayer/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		5796DDD717B8973E00AAD25C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NSBSpritesheetLayer/main.m; sourceTree = SOURCE_ROOT; };
+		5796DDD817B8973E00AAD25C /* NSBSpritesheetLayer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "NSBSpritesheetLayer-Info.plist"; path = "NSBSpritesheetLayer/NSBSpritesheetLayer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5796DDD917B8973F00AAD25C /* NSBSpritesheetLayer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBSpritesheetLayer-Prefix.pch"; path = "NSBSpritesheetLayer/NSBSpritesheetLayer-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		5796DDF917B899AA00AAD25C /* NSBSpritesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBSpritesheet.h; sourceTree = "<group>"; };
+		5796DDFA17B899AA00AAD25C /* NSBSpritesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBSpritesheet.m; sourceTree = "<group>"; };
+		5796DDFB17B899AA00AAD25C /* NSBSpritesheetLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBSpritesheetLayer.h; sourceTree = "<group>"; };
+		5796DDFC17B899AA00AAD25C /* NSBSpritesheetLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBSpritesheetLayer.m; sourceTree = "<group>"; };
+		5796DDFD17B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBTexturePackerSpritesheetFactory.h; sourceTree = "<group>"; };
+		5796DDFE17B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBTexturePackerSpritesheetFactory.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5709A3A015ADC6DA000180AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57905E1115B0539B009D3206 /* QuartzCore.framework in Frameworks */,
+				5709A3A815ADC6DA000180AF /* UIKit.framework in Frameworks */,
+				5709A3AA15ADC6DA000180AF /* Foundation.framework in Frameworks */,
+				5709A3AC15ADC6DA000180AF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5709A39815ADC6DA000180AF = {
+			isa = PBXGroup;
+			children = (
+				5709A3C215ADCACD000180AF /* Demo */,
+				5709A3AD15ADC6DA000180AF /* NSBSpritesheetLayer */,
+				5709A3A615ADC6DA000180AF /* Frameworks */,
+				5709A3A415ADC6DA000180AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5709A3A415ADC6DA000180AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5709A3A315ADC6DA000180AF /* NSBSpritesheetLayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5709A3A615ADC6DA000180AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57905E1015B0539B009D3206 /* QuartzCore.framework */,
+				5709A3A715ADC6DA000180AF /* UIKit.framework */,
+				5709A3A915ADC6DA000180AF /* Foundation.framework */,
+				5709A3AB15ADC6DA000180AF /* CoreGraphics.framework */,
+				5709A3CE15ADD037000180AF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5709A3AD15ADC6DA000180AF /* NSBSpritesheetLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5796DDF817B899AA00AAD25C /* Classes */,
+				5796DDD217B8973000AAD25C /* NSBAppDelegate.h */,
+				5796DDD317B8973000AAD25C /* NSBAppDelegate.m */,
+				5709A3AE15ADC6DA000180AF /* Supporting Files */,
+			);
+			name = NSBSpritesheetLayer;
+			path = NSSpritesheetLayer;
+			sourceTree = "<group>";
+		};
+		5709A3AE15ADC6DA000180AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5796DDD517B8973E00AAD25C /* InfoPlist.strings */,
+				5796DDD717B8973E00AAD25C /* main.m */,
+				5796DDD817B8973E00AAD25C /* NSBSpritesheetLayer-Info.plist */,
+				5796DDD917B8973F00AAD25C /* NSBSpritesheetLayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5709A3C215ADCACD000180AF /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				5796DDC917B8972100AAD25C /* Default-568h@2x.png */,
+				5796DDCA17B8972100AAD25C /* spritesheet.json */,
+				5796DDCB17B8972100AAD25C /* spritesheet@2x.png */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		5796DDF817B899AA00AAD25C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5796DDF917B899AA00AAD25C /* NSBSpritesheet.h */,
+				5796DDFA17B899AA00AAD25C /* NSBSpritesheet.m */,
+				5796DDFB17B899AA00AAD25C /* NSBSpritesheetLayer.h */,
+				5796DDFC17B899AA00AAD25C /* NSBSpritesheetLayer.m */,
+				5796DE0217B899B200AAD25C /* Factories */,
+			);
+			name = Classes;
+			path = NSBSpritesheetLayer/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		5796DE0217B899B200AAD25C /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				5796DDFD17B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.h */,
+				5796DDFE17B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5709A3A215ADC6DA000180AF /* NSBSpritesheetLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5709A3BB15ADC6DA000180AF /* Build configuration list for PBXNativeTarget "NSBSpritesheetLayer" */;
+			buildPhases = (
+				5709A39F15ADC6DA000180AF /* Sources */,
+				5709A3A015ADC6DA000180AF /* Frameworks */,
+				5709A3A115ADC6DA000180AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSBSpritesheetLayer;
+			productName = NSSpritesheetLayer;
+			productReference = 5709A3A315ADC6DA000180AF /* NSBSpritesheetLayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5709A39A15ADC6DA000180AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NS;
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 5709A39D15ADC6DA000180AF /* Build configuration list for PBXProject "NSBSpritesheetLayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5709A39815ADC6DA000180AF;
+			productRefGroup = 5709A3A415ADC6DA000180AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5709A3A215ADC6DA000180AF /* NSBSpritesheetLayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5709A3A115ADC6DA000180AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5796DDCC17B8972100AAD25C /* Default-568h@2x.png in Resources */,
+				5796DDCD17B8972100AAD25C /* spritesheet.json in Resources */,
+				5796DDCE17B8972100AAD25C /* spritesheet@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5709A39F15ADC6DA000180AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5796DDD417B8973000AAD25C /* NSBAppDelegate.m in Sources */,
+				5796DDDB17B8973F00AAD25C /* main.m in Sources */,
+				5796DDFF17B899AA00AAD25C /* NSBSpritesheet.m in Sources */,
+				5796DE0017B899AA00AAD25C /* NSBSpritesheetLayer.m in Sources */,
+				5796DE0117B899AA00AAD25C /* NSBTexturePackerSpritesheetFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5796DDD517B8973E00AAD25C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5796DDD617B8973E00AAD25C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5709A3B915ADC6DA000180AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+			};
+			name = Debug;
+		};
+		5709A3BA15ADC6DA000180AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+			};
+			name = Release;
+		};
+		5709A3BC15ADC6DA000180AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSBSpritesheetLayer/NSBSpritesheetLayer-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				INFOPLIST_FILE = "NSBSpritesheetLayer/NSBSpritesheetLayer-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = NSBSpritesheetLayer;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5709A3BD15ADC6DA000180AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSBSpritesheetLayer/NSBSpritesheetLayer-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				INFOPLIST_FILE = "NSBSpritesheetLayer/NSBSpritesheetLayer-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = NSBSpritesheetLayer;
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-unused-parameter",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5709A39D15ADC6DA000180AF /* Build configuration list for PBXProject "NSBSpritesheetLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5709A3B915ADC6DA000180AF /* Debug */,
+				5709A3BA15ADC6DA000180AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5709A3BB15ADC6DA000180AF /* Build configuration list for PBXNativeTarget "NSBSpritesheetLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5709A3BC15ADC6DA000180AF /* Debug */,
+				5709A3BD15ADC6DA000180AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5709A39A15ADC6DA000180AF /* Project object */;
+}
