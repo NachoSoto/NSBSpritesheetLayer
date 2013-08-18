@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "NSBSpritesheetLayer"
   s.version      = "1.0.0"
-  s.summary      = "Spritesheet animations in UIKit"
+  s.summary      = "Spritesheet animations in UIKit."
   s.homepage     = "https://github.com/NachoSoto/NSBSpritesheetLayer"
 
   s.license      = { :type => 'WTFPL', :file => 'LICENSE' }
