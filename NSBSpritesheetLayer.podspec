@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.source_files = 'NSBSpritesheetLayer/Classes/*.{h,m}'
   s.requires_arc = false
+  s.ios.frameworks = 'UIKit', 'CoreGraphics', 'QuartzCore'
 end
