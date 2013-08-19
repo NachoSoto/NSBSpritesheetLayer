@@ -10,8 +10,8 @@
 
 @interface NSBSpritesheet ()
 {
-    const CGRect *_frames;
-    const CGRect *_sourceSizes;
+    NSBSpritesheetFrameSetType _frames;
+    NSBSpritesheetFrameSetType _sourceSizes;
     
     NSUInteger _frameCount;
 }
@@ -22,7 +22,7 @@
 
 @implementation NSBSpritesheet
 
-- (id)initWithFrames:(const CGRect *const)frames sourceSizes:(const CGRect *const)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image
+- (id)initWithFrames:(const NSBSpritesheetFrameSetType)frames sourceSizes:(const NSBSpritesheetFrameSetType)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image
 {
     NSParameterAssert(frames);
     NSParameterAssert(sourceSizes);
@@ -53,12 +53,12 @@
 
 #pragma mark -
 
-- (const CGRect *const)frames
+- (NSBSpritesheetFrameSetType)frames
 {
     return _frames;
 }
 
-- (const CGRect *const)sourceSizes
+- (NSBSpritesheetFrameSetType)sourceSizes
 {
     return _sourceSizes;
 }

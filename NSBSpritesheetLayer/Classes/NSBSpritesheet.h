@@ -8,16 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+typedef const CGRect *NSBSpritesheetFrameSetType;
+
 @interface NSBSpritesheet : NSObject
 
 /**
  * @param frames and sourceSizes: heap allocated arrays that this class will own.
  */
-- (id)initWithFrames:(const CGRect *const)frames sourceSizes:(const CGRect *const)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image;
+- (id)initWithFrames:(const NSBSpritesheetFrameSetType)frames sourceSizes:(const NSBSpritesheetFrameSetType)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image;
 
 - (NSUInteger)frameCount;
-- (const CGRect *const)frames;
-- (const CGRect *const)sourceSizes;
+- (NSBSpritesheetFrameSetType)frames;
+- (NSBSpritesheetFrameSetType)sourceSizes;
 
 - (UIImage *)image;
 
