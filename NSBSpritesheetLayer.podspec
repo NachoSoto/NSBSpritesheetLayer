@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NSBSpritesheetLayer"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Spritesheet animations in UIKit."
   s.homepage     = "https://github.com/NachoSoto/NSBSpritesheetLayer"
 
