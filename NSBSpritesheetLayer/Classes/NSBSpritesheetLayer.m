@@ -35,7 +35,7 @@
     if ((self = [super init]))
     {
         self.spritesheet = spritesheet;
-    
+        
         CGImageRef image = spritesheet.image.CGImage;
         
         self.contentsScale = [UIScreen mainScreen].scale;
@@ -153,7 +153,7 @@
     
     if (self.completionBlock != NULL)
     {
-        void (^block)(BOOL completed) = self.completionBlock;
+        void (^block)(BOOL completed) = [[self.completionBlock copy] autorelease];
         
         self.completionBlock = NULL;
         
