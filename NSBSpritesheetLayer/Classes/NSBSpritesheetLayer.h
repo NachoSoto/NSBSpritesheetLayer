@@ -18,7 +18,7 @@
 - (BOOL)isAnimating;
 
 /**
- * @discussion return NO if the animation was already in progress
+ * @return NO if the animation was already in progress.
  */
 - (BOOL)animate;
 - (BOOL)animateWithCompletionBlock:(void(^)(BOOL finished))completionBlock;
@@ -26,7 +26,8 @@
 - (void)stop;
 
 /**
- * @discussion the animation plays back and will be completed when going back to the first frame
+ * @discussion the animation plays back and will be completed when going back to the first frame.
+ * Default: NO.
  */
 @property (nonatomic, readwrite, assign) BOOL autoreverses;
 
