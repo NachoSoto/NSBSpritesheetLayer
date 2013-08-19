@@ -15,6 +15,8 @@
     NSInteger _frameNumber;
     
     BOOL _goingBack;
+    
+    NSUInteger _repeatsLeft;
     NSUInteger _fps;
     CGSize _imageSize;
 }
@@ -42,12 +44,14 @@
         self.contents = (id)image;
         
         self.autoreverses = NO;
+        self.repetitions = 1;
+        
         _goingBack = NO;
         _fps = framesPerSecond;
         _frameNumber = 0;
         _imageSize = CGSizeMake(CGImageGetWidth(image),
                                 CGImageGetHeight(image));
-        
+
         [self renderCurrentFrame];
     }
     
@@ -71,9 +75,13 @@
     [self renderCurrentFrame];
     
     if (_goingBack)
+    {
         _frameNumber--;
+    }
     else
+    {
         _frameNumber++;
+    }
     
     if (_frameNumber >= (NSInteger)self.spritesheet.frameCount)
     {
@@ -111,10 +119,13 @@
 - (BOOL)animateWithCompletionBlock:(void (^)(BOOL))completionBlock
 {
     if ([self isAnimating])
+    {
         return NO;
+    }
     
     NSAssert(self.spritesheet.frameCount > 1, @"This spritesheet is not an animation");
     
+    _repeatsLeft = self.repetitions;
     self.completionBlock = completionBlock;
     
     // make sure we render the current frame before starting
@@ -164,8 +175,12 @@
 - (void)handleCompletion
 {
     _frameNumber = 0;
+    _repeatsLeft--;
     
-    [self stopFinished:YES];
+    if (_repeatsLeft == 0)
+    {
+        [self stopFinished:YES];
+    }
 }
 
 #pragma mark -

@@ -32,6 +32,13 @@
 @property (nonatomic, readwrite, assign) BOOL autoreverses;
 
 /**
+ * @discussion how many times the layer will animate.
+ * Changing this value will only have an effect the next time you call `animate`.
+ * Default: 1.
+ */
+@property (nonatomic, readwrite, assign) NSUInteger repetitions;
+
+/**
  * @discussion can be set after `animate` has been called. It will be reset to nil when the animation has finished.
  */
 @property (nonatomic, readwrite, copy) void (^completionBlock)(BOOL completed);
