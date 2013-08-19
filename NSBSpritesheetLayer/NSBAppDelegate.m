@@ -60,14 +60,15 @@
             .size = CGSizeZero
         }] autorelease];
 
+        layer.autoreverses = YES;
+        layer.repetitions = HUGE_VAL;
+        
         [view.layer addSublayer:layer];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(((double)arc4random() / ARC4RANDOM_MAX * 2) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
-            [self animateLayer:layer];
-        });
-        
+        [layer animate];
+
         view;
     })];
 }
-     
+
 @end
