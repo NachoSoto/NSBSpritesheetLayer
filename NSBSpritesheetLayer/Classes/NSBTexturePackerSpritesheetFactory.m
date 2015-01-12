@@ -53,7 +53,7 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
         
         // matches a word followed by '_' and a set of numbers
         _frameNameRegularExpression = [NSRegularExpression
-                                        regularExpressionWithPattern:@"([\\w|/]+)([_]{1})([0-9]+)$"
+                                        regularExpressionWithPattern:@"([\\w|/|-]+)([_]{1})([0-9]+)$"
                                         options:NSRegularExpressionCaseInsensitive
                                         error:&error];
         
