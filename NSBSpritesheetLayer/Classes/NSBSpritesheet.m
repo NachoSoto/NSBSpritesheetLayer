@@ -3,7 +3,7 @@
 //  NSBSpritesheetLayer
 //
 //  Created by Nacho Soto on 8/11/13.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012. All rights reserved.
 //
 
 #import "NSBSpritesheet.h"
@@ -22,7 +22,7 @@
 
 @implementation NSBSpritesheet
 
-- (id)initWithFrames:(const NSBSpritesheetFrameSetType)frames sourceSizes:(const NSBSpritesheetFrameSetType)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image
+- (instancetype)initWithFrames:(const NSBSpritesheetFrameSetType)frames sourceSizes:(const NSBSpritesheetFrameSetType)sourceSizes frameCount:(const NSUInteger)frameCount spritesheetImage:(UIImage *)image
 {
     NSParameterAssert(frames);
     NSParameterAssert(sourceSizes);
@@ -45,10 +45,6 @@
 {
     free((void *)_frames);
     free((void *)_sourceSizes);
-    
-    [_image release];
-    
-    [super dealloc];
 }
 
 #pragma mark -

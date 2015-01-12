@@ -8,10 +8,12 @@
 
 #import "NSBTexturePackerSpritesheetFactory.h"
 
+#import <UIKit/UIKit.h>
+
 #import "NSBSpritesheet.h"
 
-#define kFrameKey @"frame"
-#define kSourceSizeKey @"spriteSourceSize"
+static NSString * const kFrameKey = @"frame";
+static NSString * const kSourceSizeKey = @"spriteSourceSize";
 
 static inline CGRect rectFromDictionary(NSDictionary *dictionary)
 {
@@ -25,7 +27,7 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
 
 @interface _NSBSpritesheetSequenceFrame : NSObject
 
-+ (id)sequenceFrameWithName:(NSString *)name number:(NSUInteger)number;
++ (instancetype)sequenceFrameWithName:(NSString *)name number:(NSUInteger)number;
 
 @property (nonatomic, readwrite, copy) NSString *name;
 @property (nonatomic, readwrite, assign) NSUInteger number;
@@ -42,7 +44,7 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
 
 + (instancetype)factory
 {
-    return [[[self alloc] init] autorelease];
+	return [[self alloc] init];
 }
 
 - (id)init
@@ -52,10 +54,10 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
         NSError *error = nil;
         
         // matches a word followed by '_' and a set of numbers
-        _frameNameRegularExpression = [[NSRegularExpression
+        _frameNameRegularExpression = [NSRegularExpression
                                         regularExpressionWithPattern:@"([\\w|/]+)([_]{1})([0-9]+)$"
                                         options:NSRegularExpressionCaseInsensitive
-                                        error:&error] retain];
+                                        error:&error];
         
         NSAssert(_frameNameRegularExpression, @"Error creating regular expression: %@", error);
     }
@@ -63,17 +65,13 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
     return self;
 }
 
-- (void)dealloc
-{
-    [_frameNameRegularExpression release];
-    
-    [super dealloc];
-}
-
 #pragma mark -
 
 - (NSDictionary *)spritesheetsWithAnimationsData:(NSDictionary *)animationsData image:(UIImage *)image
 {
+	NSParameterAssert(animationsData);
+	NSParameterAssert(image);
+
     NSDictionary *animations = [self animationsWithData:animationsData];
     NSDictionary *spritesheets = [self spritesheetsWithAnimations:animations image:image];
 
@@ -173,21 +171,21 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
             frames[i] = rectFromDictionary(frameData[kFrameKey]);
             sourceSizes[i] = rectFromDictionary(frameData[kSourceSizeKey]);
         }
-        
-        result[frameName] = [[[NSBSpritesheet alloc] initWithFrames:frames
-                                                       sourceSizes:sourceSizes
-                                                        frameCount:frameCount
-                                                  spritesheetImage:image] autorelease];
-    }];
-    
-    return result;
+
+		result[frameName] = [[NSBSpritesheet alloc] initWithFrames:frames
+													   sourceSizes:sourceSizes
+														frameCount:frameCount
+												  spritesheetImage:image];
+	}];
+
+	return result;
 }
 
 @end
 
 @implementation _NSBSpritesheetSequenceFrame
 
-- (id)initWithName:(NSString *)name number:(NSUInteger)number
+- (instancetype)initWithName:(NSString *)name number:(NSUInteger)number
 {
     if ((self = [super init]))
     {
@@ -198,21 +196,14 @@ static inline CGRect rectFromDictionary(NSDictionary *dictionary)
     return self;
 }
 
-+ (id)sequenceFrameWithName:(NSString *)name number:(NSUInteger)number
++ (instancetype)sequenceFrameWithName:(NSString *)name number:(NSUInteger)number
 {
-    return [[[self alloc] initWithName:name number:number] autorelease];
+    return [[self alloc] initWithName:name number:number];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: %p, name: %@, number: %d>", NSStringFromClass([self class]), self, self.name, self.number];
-}
-
-- (void)dealloc
-{
-    [_name release];
-    
-    [super dealloc];
+    return [NSString stringWithFormat:@"<%@: %p, name: %@, number: %lu>", NSStringFromClass([self class]), self, self.name, (unsigned long)self.number];
 }
 
 @end
