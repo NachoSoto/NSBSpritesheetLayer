@@ -8,8 +8,6 @@
 
 #import "NSBTexturePackerSpritesheetFactory.h"
 
-#import <UIKit/UIKit.h>
-
 #import "NSBSpritesheet.h"
 
 static NSString * const kFrameKey = @"frame";
