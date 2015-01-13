@@ -3,12 +3,18 @@
 //  NSBSpritesheetLayer
 //
 //  Created by Nacho Soto on 8/11/13.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012. All rights reserved.
 //
 
 #import "NSBSpritesheetLayer.h"
 
 #import "NSBSpritesheet.h"
+
+@interface _WeakTargetProxy : NSObject
+
++ (instancetype)proxyWithObject:(id<NSObject>)object;
+
+@end
 
 @interface NSBSpritesheetLayer ()
 {
@@ -21,15 +27,15 @@
     CGSize _imageSize;
 }
 
-@property (nonatomic, retain) NSBSpritesheet *spritesheet;
+@property (nonatomic) NSBSpritesheet *spritesheet;
 
-@property (nonatomic, assign) CADisplayLink *link;
+@property (nonatomic) CADisplayLink *link;
 
 @end
 
 @implementation NSBSpritesheetLayer
 
-- (id)initWithSpritesheet:(NSBSpritesheet *)spritesheet framesPerSecond:(NSUInteger)framesPerSecond
+- (instancetype)initWithSpritesheet:(NSBSpritesheet *)spritesheet framesPerSecond:(NSUInteger)framesPerSecond
 {
     NSParameterAssert(spritesheet);
     NSAssert(framesPerSecond > 0, @"Invalid frames per second");
@@ -37,11 +43,11 @@
     if ((self = [super init]))
     {
         self.spritesheet = spritesheet;
-        
+
         CGImageRef image = spritesheet.image.CGImage;
         
         self.contentsScale = [UIScreen mainScreen].scale;
-        self.contents = (id)image;
+        self.contents = (__bridge id)image;
         
         self.autoreverses = NO;
         self.repetitions = 1;
@@ -61,11 +67,6 @@
 - (void)dealloc
 {
     [_link invalidate];
-    
-    [_spritesheet release];
-    [_completionBlock release];
-    
-    [super dealloc];
 }
 
 #pragma mark -
@@ -132,7 +133,8 @@
     // this prevents the user from seeing the last frame right before the animation starts
     [self renderCurrentFrame];
     
-    self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    self.link = [CADisplayLink displayLinkWithTarget:[_WeakTargetProxy proxyWithObject:self]
+											selector:@selector(update:)];
     self.link.frameInterval = 60 / _fps;
     
     [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -154,9 +156,6 @@
 
 - (void)stopFinished:(BOOL)finished
 {
-    // make sure self doesn't get dealloc-ed after the link is invalidated
-    [[self retain] autorelease];
-    
     // set link to nil before invalidating to make sure we don't call that twice
     CADisplayLink *displayLink = self.link;
     self.link = nil;
@@ -164,8 +163,8 @@
     
     if (self.completionBlock != NULL)
     {
-        void (^block)(BOOL completed) = [[self.completionBlock copy] autorelease];
-        
+		void (^block)(BOOL completed) = self.completionBlock;
+
         self.completionBlock = NULL;
         
         block(finished);
@@ -230,6 +229,34 @@
                       frame.origin.y / _imageSize.height,
                       frame.size.width / _imageSize.width,
                       frame.size.height / _imageSize.height);
+}
+
+@end
+
+@implementation _WeakTargetProxy {
+	__weak id<NSObject> _object;
+}
+
++ (instancetype)proxyWithObject:(id<NSObject>)object
+{
+	return [[self alloc] initWithObject:object];
+}
+
+- (instancetype)initWithObject:(id<NSObject>)object
+{
+	NSParameterAssert(object);
+
+	if ((self = [super init]))
+	{
+		_object = object;
+	}
+
+	return self;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector
+{
+	return _object;
 }
 
 @end

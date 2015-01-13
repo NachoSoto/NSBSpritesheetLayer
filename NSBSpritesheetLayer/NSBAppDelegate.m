@@ -3,7 +3,7 @@
 //  NSBSpritesheetLayer
 //
 //  Created by Nacho Soto on 8/11/13.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012. All rights reserved.
 //
 
 #import "NSBAppDelegate.h"
@@ -13,20 +13,11 @@
 
 #import "NSBTexturePackerSpritesheetFactory.h"
 
-#define ARC4RANDOM_MAX      0x100000000
-
 @implementation NSBAppDelegate
-
-- (void)dealloc
-{
-    [_window release];
-    
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.applicationFrame];
     self.window.backgroundColor = [UIColor whiteColor];
     
     UIImage *image = [UIImage imageNamed:@"spritesheet.png"];
@@ -52,13 +43,13 @@
 
 - (void)addAnimationAtPoint:(CGPoint)point withSpritesheet:(NSBSpritesheet *)spritesheet
 {
-    NSBSpritesheetLayer *layer = [[[NSBSpritesheetLayer alloc] initWithSpritesheet:spritesheet framesPerSecond:15] autorelease];
+	NSBSpritesheetLayer *layer = [[NSBSpritesheetLayer alloc] initWithSpritesheet:spritesheet framesPerSecond:15];
     
     [self.window addSubview:({
-        UIView *view = [[[UIView alloc] initWithFrame:(CGRect){
+        UIView *view = [[UIView alloc] initWithFrame:(CGRect){
             .origin = point,
             .size = CGSizeZero
-        }] autorelease];
+		}];
 
         layer.autoreverses = YES;
         layer.repetitions = HUGE_VAL;
