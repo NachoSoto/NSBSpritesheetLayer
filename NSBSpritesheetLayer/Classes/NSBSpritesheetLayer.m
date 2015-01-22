@@ -137,7 +137,7 @@
 											selector:@selector(update:)];
     self.link.frameInterval = 60 / _fps;
     
-    [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
     return YES;
 }
