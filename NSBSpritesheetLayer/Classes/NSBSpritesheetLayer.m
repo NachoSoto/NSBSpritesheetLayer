@@ -35,6 +35,8 @@
 
 @implementation NSBSpritesheetLayer
 
+@dynamic autoreverses; // Implemented by CALayer.
+
 - (instancetype)initWithSpritesheet:(NSBSpritesheet *)spritesheet framesPerSecond:(NSUInteger)framesPerSecond
 {
     NSParameterAssert(spritesheet);
